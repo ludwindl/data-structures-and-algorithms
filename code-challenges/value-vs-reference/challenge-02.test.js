@@ -69,7 +69,10 @@ console.log(people[1].isAuthor) prints true
 
 const setStatusAsAuthor = (people) => {
   // Solution code here...
-  
+  people.forEach((element) => {
+    people.push(element.isAuthor = true);
+    console.log(people[1].isAuthor);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -74,6 +74,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let newArr = [];
+  arr.reduce((item, val) => {
+    newArr.push(val.name);
+  }, 0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,6 +91,9 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  return str.split('').reduce((item, val) => {
+    return val + item;
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -254,7 +262,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return the string with the characters in reverse order', () => {
     expect(reversedString('Code 301')).toStrictEqual('103 edoC');
   });

@@ -147,6 +147,10 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  let newArray = arr.reduce((item, val) =>{
+    return (item.children = val);
+  })
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -268,7 +272,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });

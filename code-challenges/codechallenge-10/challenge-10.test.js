@@ -155,11 +155,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
-<<<<<<< HEAD
-  let shortHeight = data.reduce((acc, val) => {
-=======
   let short = data.reduce((acc, val) => {
->>>>>>> fa0abead4689a190abc61e7377911655d3cf8be8
     acc.push(val.height);
     return acc;
   }, []).reduce((acc, val) => {
@@ -170,11 +166,7 @@ let findShortest = (data) => {
       return acc;
     }
   }, 1000);
-<<<<<<< HEAD
-  let shortest = data.filter(n => n.height === `${shortHeight}`);
-=======
   let shortest = data.filter(n => n.height === `${short}`);
->>>>>>> fa0abead4689a190abc61e7377911655d3cf8be8
   return shortest[0].name;
 };
 

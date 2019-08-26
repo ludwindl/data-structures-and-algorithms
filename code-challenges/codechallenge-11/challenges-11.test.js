@@ -35,28 +35,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
-  if (email.length <= 2){
-    return false;
-  }
-  if (email.indexOf('@') === -1) {
-    return false;
-  }
-
-  let parts = email.split('@');
-  let dot = parts[1].indexOf('.');
-  let dotSplits = parts[1].split('.');
-  let dotCount = dotSplits.length -1;
-
-  if (dot === -1 || dot < 2 || dotCount > 2){
-    return false;
-  }
-
-  for (let i = 0; i < dotSplits.length; i++){
-    if (dotSplits[i].length === 0) {
-      return false;
-    }
-  }
-  return true;
+  let regex = /^\w*.\w+@\w+.(com|net|org)$/;
+  return regex.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,11 +62,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
-  if (/^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(phoneNumber)) {
-    return true;
-  } else {
-    return false;
-  }
+  let regex = /^(\d{3}|\(\d{3}\))(| |-|)\d{3}(| |-)\d{4}$/;
+  return regex.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
